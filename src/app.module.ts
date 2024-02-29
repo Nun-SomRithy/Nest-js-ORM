@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TasksModule } from './tasks/tasks.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -13,7 +14,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: 'root',
       database: 'task-management',
       autoLoadEntities: true,
-      synchronize: true
+      synchronize: true,
+      entities: [join(__dirname , '../src/task/*.entity.{js,ts}')],
+
     })
   ],     
 })
