@@ -1,6 +1,7 @@
-import {Repository } from 'typeorm';
-import { Task } from "./task.entity";
+import { Task } from './task.entity';
+import { Repository } from "typeorm";
 
-export class TaskRepository extends Repository<Task>{
+export class TaskRepository extends Repository<Task> {
+
 
 }
